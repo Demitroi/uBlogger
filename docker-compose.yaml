@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  hugo:
+    image: klakegg/hugo:0.83.1-ext-alpine
+    command: server --themesDir ../..
+    working_dir: /hugoSites/uBlogger/exampleSite
+    environment:
+      HUGO_ENV: DEV
+    volumes:
+      - '.:/hugoSites/uBlogger'
+    ports:
+      - 127.0.0.1:1313:1313
+
